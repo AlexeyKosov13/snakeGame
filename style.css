@@ -1,0 +1,33 @@
+.game {
+    display: flex;
+    justify-content: space-around;
+}
+.game__block {
+}
+.control__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.easy__btn {
+}
+.btn {
+    margin-bottom: 30px;
+    padding: 10px 30px;
+}
+.normal__btn {
+}
+.hard__btn {
+}
+.start__btn {
+}
+.hide {
+    visibility: hidden;
+}
+.show {
+    visibility: visible;
+}
+
+.choice__btn {
+    background-color: green;
+}

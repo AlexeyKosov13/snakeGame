@@ -7,29 +7,57 @@ ground.src = 'img/bg.png';
 const foodImg = new Image();
 foodImg.src = 'img/carrot.png';
 
+const startBtn = document.querySelector('.start__btn');
+const easyBtn = document.querySelector('.easy__btn');
+const normalBtn = document.querySelector('.normal__btn');
+const hardBtn = document.querySelector('.hard__btn');
+let option = 200;
 let box = 32;
-let score = 0;
 
-// размещаем еду
-let food = {
-    x: Math.floor((Math.random() * 17 + 1)) * box,
-    y: Math.floor((Math.random() * 15 + 3)) * box,
-};
 
-let snake = [];
-// начальная точка
-snake[0] = {
-    x: 9 * box,
-    y: 10 * box
-};
+easyBtn.addEventListener('click', () => {
+    option = 250;
+    easyBtn.classList.add('choice__btn');
+    normalBtn.classList.remove('choice__btn');
+    hardBtn.classList.remove('choice__btn');      
+});
+hardBtn.addEventListener('click', () => {
+    option = 70;
+    hardBtn.classList.add('choice__btn');
+    normalBtn.classList.remove('choice__btn');
+    easyBtn.classList.remove('choice__btn');
+    console.log(option);     
+});
+normalBtn.addEventListener('click', () => {
+    option = 100;
+    normalBtn.classList.add('choice__btn');
+    easyBtn.classList.remove('choice__btn');
+    hardBtn.classList.remove('choice__btn');
+});
+startGame();
+// === функция перезапуска
+function startGame() {
+    let score = 0;
+    //прячем кнопку старт
+    startBtn.classList.add('hide');
+    // размещаем еду
+    let food = {
+        x: Math.floor((Math.random() * 17 + 1)) * box,
+        y: Math.floor((Math.random() * 15 + 3)) * box,
+    };
 
-// запуск 
-document.addEventListener('keydown', direction);
+    let snake = [];
+    // начальная точка
+    snake[0] = {
+        x: 9 * box,
+        y: 10 * box
+    };
 
-let dir;
+    let dir;
 
 // управление
-function direction(event) {
+    function direction(event) {
+    
     if (event.keyCode == 37 && dir != 'right')
         dir = 'left';
     else if (event.keyCode == 38 && dir != 'down')
@@ -38,18 +66,19 @@ function direction(event) {
         dir = 'right';
     else if (event.keyCode == 40 && dir != 'up')
         dir = 'down';
-}
+};
 
-
-
-// замыкуание на себя
+// замыкание на себя
 function eatTail(head, arr) {
     for (let i = 0; i < arr.length; i++) {
         if (head.x == arr[i].x && head.y == arr[i].y)
+            
             clearInterval(game);
+            startBtn.classList.remove('hide');
     }
-}
-
+};
+    
+    // рисуем игру
 function drawGame() {
     ctx.drawImage(ground, 0, 0);
     ctx.drawImage(foodImg, food.x, food.y);
@@ -79,10 +108,10 @@ function drawGame() {
     if (snakeX < box || snakeX > box * 17
         || snakeY < 3 * box || snakeY > box * 17) {
         clearInterval(game);
-        restartGame();
+        startBtn.classList.remove('hide');
+        
     }
         
-    
     if (dir == 'left') snakeX -= box;
     if (dir == 'right') snakeX += box;
     if (dir == 'up') snakeY -= box;
@@ -97,7 +126,24 @@ function drawGame() {
 
     snake.unshift(newHead);
 
+    };
+
+    document.addEventListener('keydown', direction);
+
+    let game = setInterval(drawGame, option);
 };
 
-let game = setInterval(drawGame, 100);
+
+
+
+// ============перезапуск================ 
+
+startBtn.addEventListener('click', startGame);
+
+
+
+
+
+
+
 
