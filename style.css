@@ -3,6 +3,7 @@
     justify-content: space-around;
 }
 .game__block {
+    position: relative;
 }
 .control__block {
     display: flex;
@@ -30,4 +31,15 @@
 
 .choice__btn {
     background-color: green;
+}
+.modal {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    background-color: #fff;
+    padding: 20px;
+    width: 200px;
+    border-radius: 5px;
 }
