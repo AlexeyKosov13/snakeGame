@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Snake</title>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html"><img src="img/logo.png" alt="logo" class="header__logo"></a>
+        
+        <ul class="header__list">
+            <li class="header__item">
+                <a href="snake.html" class="header__link">Snake</a>
+            </li>
+            <li class="header__item">
+                <a href="memory.html" class="header__link">Memory</a>
+            </li>
+        </ul>
+    </header>
+
+    <div class="game">
+        <div class="game__block">
+            <canvas id="game" width="608" height="608"></canvas>
+        </div>
+        <div class="control__block">
+            <button class="easy__btn btn">easy</button>
+            <button class="normal__btn btn">normal</button>
+            <button class="hard__btn btn">hard</button>
+            <button class="start__btn btn hide">start</button>
+        </div>
+    </div>
+    
+
+    <div class="modal hide">
+        <h3 class="modal__title">Игра окончена</h3>
+        <p class="modal__text">Вы набрали: <span class="modal__score"></span></p>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
