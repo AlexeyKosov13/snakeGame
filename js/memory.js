@@ -13,7 +13,7 @@
         { image: 'img/memory/minion.jpg', name: 'minion' },
         { image: 'img/memory/kids.jpg', name: 'kids' },
         { image: 'img/memory/nlo.jpg', name: 'nlo' },
-        { image: 'img/memory/shrek.jpg', name: 'shrek' },
+        { image: 'img/memory/Shrek.jpg', name: 'shrek' },
         { image: 'img/memory/ralph.jpg', name: 'ralph' },
         { image: 'img/memory/aleks.jpg', name: 'alex' },
         { image: 'img/memory/angry.jpg', name: 'angry' },
@@ -21,7 +21,7 @@
         { image: 'img/memory/minion.jpg', name: 'minion' },
         { image: 'img/memory/kids.jpg', name: 'kids' },
         { image: 'img/memory/nlo.jpg', name: 'nlo' },
-        { image: 'img/memory/shrek.jpg', name: 'shrek' },
+        { image: 'img/memory/Shrek.jpg', name: 'shrek' },
         { image: 'img/memory/ralph.jpg', name: 'ralph' }
         
     ];
